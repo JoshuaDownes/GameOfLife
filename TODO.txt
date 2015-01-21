@@ -1,0 +1,7 @@
+- Fix buttons (clear, speed)
+
+- Edit timeline (deprecated method)
+
+- Bind size of squares to stage
+
+- Change aesthetic
