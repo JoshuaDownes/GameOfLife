@@ -10,9 +10,8 @@ public class Cell extends Rectangle{
 	public int neighbors = 0, incrementValue = 0;
 
 	public Cell(int i, int j, Cell[][] allCells){
-		super(20, 20, Color.WHITE);
-		super.setStroke(Color.BLACK);
-
+		super(10, 10, Color.WHITE);
+		super.setStroke(Color.LIGHTGREY);
 		this.i = i;
 		this.j = j;
 		this.allCells = allCells;
@@ -32,8 +31,8 @@ public class Cell extends Rectangle{
 	}
 
 	private void incrementNeighbors(int n){
-		int bli = 30;
-		int blj = 30;
+		int bli = 60;
+		int blj = 60;
 
 		if(i>0) 		allCells[i-1][j].neighbors+=n;
 		if(i<bli-1)	 	allCells[i+1][j].neighbors+=n;

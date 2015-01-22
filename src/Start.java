@@ -22,8 +22,8 @@ import javafx.scene.paint.Color;
 
 public class Start extends Application{
 	
-	private Cell[][] cells = new Cell[30][30];
-	private int speed = 300;
+	private Cell[][] cells = new Cell[60][60];
+	private int speed = 200;
 	private Timeline timeline;
 
 	@Override	
@@ -44,8 +44,8 @@ public class Start extends Application{
 		Scene gameOfLife = new Scene(controlWindow, 600, 600);
 		
 		//Generate cells
-		for(int i = 0; i<30; i++){
-			for(int j = 0; j<30; j++){
+		for(int i = 0; i<60; i++){
+			for(int j = 0; j<60; j++){
 				cells[i][j] = new Cell(i,j,cells);
 				board.add(cells[i][j],i,j);
 			}	
@@ -55,9 +55,17 @@ public class Start extends Application{
 
 		//Setup buttons
 		startButton.setOnAction((EventHandler<ActionEvent>) e->{
+			for(Cell[] inner : cells)
+				for(Cell cell : inner){
+					if(cell.alive) cell.setStroke(Color.BLACK);
+					else cell.setStroke(Color.WHITE);
+				}
 			timeline.play();
 		});
 		pauseButton.setOnAction((EventHandler<ActionEvent>) e->{
+			for(Cell[] inner : cells)
+				for(Cell cell : inner)
+					cell.setStroke(Color.LIGHTGREY);
 			timeline.stop();
 		});
 		clear.setOnAction((EventHandler<ActionEvent>) e->{
