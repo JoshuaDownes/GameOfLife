@@ -2,6 +2,12 @@
 
 - Edit timeline (deprecated method)
 
-- Bind size of squares to stage
+- New buttons for square amount, outline type (none, only when paused, always,
+  highlight path, highlight original position), tweak button sizes in general 
 
 - Change aesthetic
+
+- Play with outline types, add automatic generation for common life forms
+
+- Add theme changer
+
